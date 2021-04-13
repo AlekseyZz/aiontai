@@ -12,7 +12,7 @@ pip install aiontai
 import asyncio
 import aiontai
 
-api = aiontai.API(proxi="http://45.67.123.207:30001")
+api = aiontai.API()
 
 
 async def main():
@@ -20,9 +20,9 @@ async def main():
 
 
 if __name__ == "__main__":
-    asyncio.run(main()) 
+    asyncio.run(main())
 ```
-### Iterate of doujin pages
+### Iterate doujin pages
 ```python
 import asyncio
 import aiontai
@@ -37,7 +37,22 @@ async def main():
 
 
 if __name__ == "__main__":
-    asyncio.run(main()) 
+    asyncio.run(main())
+```
+### Get doujin with proxy
+```python
+import asyncio
+import aiontai
+
+api = aiontai.API(proxy="...")  # Put your proxy to string.
+
+
+async def main():
+    doujin = await api.get_doujin(1)
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
 ```
 
 # Dataclasses
@@ -50,13 +65,13 @@ if __name__ == "__main__":
 - ## TagType
     - Enumeration, that represents a [Tag](#Tag) type.
     ### Enumerations
-    - tag {str} = "tag"
-    - category {str} = "category"
-    - artist {str} = "artist"
-    - parody {str} = "parody"
-    - character {str} = "character"
-    - group {str} = "group"
-    - language {str} = "language"
+    - TAG {str} = "tag"
+    - CATEGORY {str} = "category"
+    - ARTIST {str} = "artist"
+    - PARODY {str} = "parody"
+    - CHARACTER {str} = "character"
+    - GROUP {str} = "group"
+    - LANGUAGE {str} = "language"
 - ## Title
     ### Attributes
     - english {str} -- English version of title
@@ -93,7 +108,7 @@ if __name__ == "__main__":
 - ## async get_doujin()
     Method for search doujins by id.
     ### Args:
-    - id {int} -- Doujin's id, which we get.
+    - doujin_id {int} -- Doujin's id, which we get.
 
     ### Returns:
     - [Doujin](#Doujin).
@@ -111,7 +126,7 @@ if __name__ == "__main__":
 - ## async is_exist()
     Method for checking does doujin exist.
     ### Args:
-    - id {int} -- Doujin's id, which we check.
+    - doujin_id {int} -- Doujin's id, which we check.
 
     ### Returns:
     - True if doujin is exist
@@ -200,10 +215,10 @@ if __name__ == "__main__":
     ```
 
 # Contributing
-1. Write your code as PEP8
-2. Write tests for your code
+1. Write your code following PEP8
+2. Write and run tests for your code
 3. Dont be rude with other contributors
 
-# Issues 
+# Issues
 1. Before opening issue check, is it not a duplicate
 2. In issue write, how to reproduce issue
