@@ -9,15 +9,12 @@ from aiontai.config import config
 from aiontai import utils
 
 
-Datetime = datetime
-
-
 class ImageExtension(Enum):
     """Enumeration for image extension."""
 
-    JPG = "j"
-    PNG = "p"
-    GIF = "g"
+    jpg = "j"
+    png = "p"
+    gif = "g"
 
 
 class TagType(Enum):
@@ -126,7 +123,7 @@ class Doujin:
     pages_count: int
     favorites: int
     scanlator: str
-    upload_date: Datetime
+    upload_date: datetime
 
     @classmethod
     def from_json(cls, json: dict) -> "Doujin":
@@ -139,7 +136,7 @@ class Doujin:
         favorites = json["favorites"]
         pages_count = len(json["pages"])
         scanlator = json["scanlator"]
-        upload_date = Datetime.utcfromtimestamp(json["upload_date"])
+        upload_date = datetime.utcfromtimestamp(json["upload_date"])
 
         title = Title.from_json(json["title"])
         thumbnail = Image.from_json(json["thumbnail"])
