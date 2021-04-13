@@ -10,7 +10,6 @@ class API:
     """Impementation of NHentaiAPI wrapper."""
 
     def __init__(self, proxy: Optional[str] = None) -> None:
-        self.proxy = proxy
         self.nhentai = api.NHentaiAPI(proxy=proxy)
 
     async def get_doujin(self, doujin_id: int) -> models.Doujin:
@@ -145,5 +144,5 @@ class API:
         for json in response:
             result = await utils.make_doujin_json(json)
             results.append(result)
- 
+
         return [models.Doujin.from_json(json) for json in results]
