@@ -1,7 +1,3 @@
-import os
-import site
-site.addsitedir(os.getcwd())
-
 from aiontai import models, errors
 import pytest
 
