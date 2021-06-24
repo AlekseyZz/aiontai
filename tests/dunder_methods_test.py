@@ -1,7 +1,6 @@
 import os
 import site
 import asyncio
-site.addsitedir(os.getcwd())
 import pytest
 import aiontai
 
