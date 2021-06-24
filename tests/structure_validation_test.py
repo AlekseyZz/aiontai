@@ -1,12 +1,7 @@
 from aiontai.config import config
 from aiontai import utils, errors
-import pytest
 from schema import SchemaError
-import os
-import site
-
-site.addsitedir(os.getcwd())
-
+import pytest
 
 def test_doujin_structure():
     test_structure = {

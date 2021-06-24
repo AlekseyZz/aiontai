@@ -1,8 +1,5 @@
-import os
-import site
 import asyncio
 import dataclasses
-site.addsitedir(os.getcwd())
 
 import pytest
 
