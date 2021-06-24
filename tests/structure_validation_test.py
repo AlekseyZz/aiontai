@@ -1,6 +1,6 @@
-from schema import SchemaError
 from aiontai.config import config
 from aiontai import utils, errors
+from schema import SchemaError
 import pytest
 
 def test_doujin_structure():
