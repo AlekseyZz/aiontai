@@ -1,7 +1,4 @@
-import os
-import site
 import asyncio
-site.addsitedir(os.getcwd())
 
 import pytest
 from aiontai import api, errors
