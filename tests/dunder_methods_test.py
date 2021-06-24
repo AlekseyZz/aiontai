@@ -1,5 +1,3 @@
-import os
-import site
 import asyncio
 import pytest
 import aiontai
